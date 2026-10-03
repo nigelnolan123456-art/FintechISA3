@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Features – Pocketwise</title>
+  <meta name="description" content="Budgets, savings goals, bill alerts and free EMI and savings calculators.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><span class="logo-mark"></span>Pocketwise</a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html" aria-current="page">Features</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a class="btn btn-primary" href="#calculators">Try the calculators</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-title">
+    <h1>Features</h1>
+    <p>Everything Pocketwise does, and two calculators you can use right now.</p>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="features">
+        <div class="feature"><div class="icon" aria-hidden="true">📊</div><h3>Spending tracker</h3><p>Payments from your bank, cards and UPI are sorted into categories automatically. Change a category once and Pocketwise remembers it.</p></div>
+        <div class="feature"><div class="icon" aria-hidden="true">💼</div><h3>Monthly budgets</h3><p>Set a limit for food, travel or shopping. You get an alert at 80% and again at 100%.</p></div>
+        <div class="feature"><div class="icon" aria-hidden="true">🎯</div><h3>Savings goals</h3><p>Name a goal, set an amount and a date, and see how much to save each month.</p></div>
+        <div class="feature"><div class="icon" aria-hidden="true">🔔</div><h3>Bill reminders</h3><p>Rent, subscriptions and card bills each get a reminder before the due date.</p></div>
+        <div class="feature"><div class="icon" aria-hidden="true">🏦</div><h3>Loan planner</h3><p>See the EMI and total interest for a loan before you apply for it.</p></div>
+        <div class="feature"><div class="icon" aria-hidden="true">🔒</div><h3>Read-only and private</h3><p>Pocketwise can view your accounts but never move money. You can unlink an account at any time.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calculators" class="bg-mint">
+    <div class="wrap">
+      <h2>Free calculators</h2>
+      <p>Both calculators run in your browser. Nothing you enter is stored or sent anywhere. The demo account balance is separate from the calculator estimates.</p>
+      <details class="demo-account-settings">
+        <summary>Set demo account balance</summary>
+        <label for="demo-account-balance">Starting balance (₹)</label>
+        <input type="number" id="demo-account-balance" min="0" step="100" value="48250">
+        <p>Set the sample balance shown on both calculator cards. Calculator inputs do not change it. This is not connected to a real account.</p>
+      </details>
+      <div class="two-col">
+
+        <div class="calc">
+          <div class="calc-heading">
+            <h3>EMI calculator</h3>
+            <div class="calc-balance" aria-label="Demo account balance">
+              <span class="balance-label">Demo account balance</span>
+              <strong id="emi-demo-balance">₹•••••</strong>
+              <button class="balance-toggle" type="button" data-calc-balance-toggle data-show-label="Show" data-hide-label="Hide" data-demo-balance="emi-demo-balance" aria-pressed="false">Show</button>
+            </div>
+          </div>
+          <label for="emi-amount">Loan amount (₹)</label>
+          <input type="number" id="emi-amount" min="0" value="500000">
+          <label for="emi-rate">Interest rate (% per year)</label>
+          <input type="number" id="emi-rate" min="0" step="0.1" value="10.5">
+          <label for="emi-years">Loan term (years)</label>
+          <input type="number" id="emi-years" min="0" step="0.5" value="5">
+          <button class="btn btn-primary" id="emi-btn" type="button">Calculate EMI</button>
+          <div class="result" id="emi-result" aria-live="polite">Your monthly EMI will appear here.</div>
+        </div>
+
+        <div class="calc">
+          <div class="calc-heading">
+            <h3>Savings calculator</h3>
+            <div class="calc-balance" aria-label="Demo account balance">
+              <span class="balance-label">Demo account balance</span>
+              <strong id="sav-demo-balance">₹•••••</strong>
+              <button class="balance-toggle" type="button" data-calc-balance-toggle data-show-label="Show" data-hide-label="Hide" data-demo-balance="sav-demo-balance" aria-pressed="false">Show</button>
+            </div>
+          </div>
+          <label for="sav-monthly">Monthly saving (₹)</label>
+          <input type="number" id="sav-monthly" min="0" value="5000">
+          <label for="sav-rate">Expected return (% per year)</label>
+          <input type="number" id="sav-rate" min="0" step="0.1" value="7">
+          <label for="sav-years">Time (years)</label>
+          <input type="number" id="sav-years" min="0" step="0.5" value="3">
+          <button class="btn btn-primary" id="sav-btn" type="button">Calculate savings</button>
+          <div class="result" id="sav-result" aria-live="polite">Your future savings will appear here.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><div><h3>Link</h3><p>Connect accounts with read-only access.</p></div></li>
+        <li><div><h3>Sort</h3><p>Pocketwise categorises each payment.</p></div></li>
+        <li><div><h3>Plan</h3><p>Set budgets and goals, then follow the alerts.</p></div></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <p><b>Pocketwise</b></p>
+      <p>Sample FinTech website for ISA-III. Calculators give estimates only, not financial advice.</p>
+    </div>
+    <div>
+      <p><a href="about.html">About Us</a> · <a href="services.html">Features</a> · <a href="contact.html">Contact</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

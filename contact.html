@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact – Pocketwise</title>
+  <meta name="description" content="Get in touch with the Pocketwise team.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><span class="logo-mark"></span>Pocketwise</a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Features</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+      <li><a class="btn btn-primary" href="services.html#calculators">Try the calculators</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-title">
+    <h1>Contact us</h1>
+    <p>Questions, feedback or ideas? Send us a message.</p>
+  </div>
+
+  <section>
+    <div class="wrap two-col">
+      <form class="form" id="contact-form">
+        <div>
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="topic">Topic</label>
+          <select id="topic" name="topic">
+            <option>General question</option>
+            <option>Feedback on the app</option>
+            <option>Report a problem</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Send message</button>
+        <div class="form-msg" id="form-msg" role="status"></div>
+      </form>
+
+      <div>
+        <h2>Reach us directly</h2>
+        <p>Email: hello@pocketwise.example<br>Phone: +91 00000 00000<br>Address: Sample Street, Your City, India</p>
+        <p>These are dummy details for a college project.</p>
+
+        <div class="chat-note">
+          <h3>Chatbot</h3>
+          <p>Chat with us using the Tidio widget in the corner of any page. Never enter bank passwords or other sensitive financial information in chat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <p><b>Pocketwise</b></p>
+      <p>Sample FinTech website for ISA-III. Not a real financial service.</p>
+    </div>
+    <div>
+      <p><a href="about.html">About Us</a> · <a href="services.html">Features</a> · <a href="contact.html">Contact</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

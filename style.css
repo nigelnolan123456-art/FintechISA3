@@ -1,0 +1,187 @@
+/* Pocketwise – sample FinTech website (ISA-III) */
+:root {
+  --paper: #f7f8f4;
+  --ink: #17211f;
+  --muted: #566460;
+  --teal: #0e4d45;
+  --teal-dark: #0a3832;
+  --mint: #dcebe4;
+  --marigold: #f2b632;
+  --coral: #e2674a;
+  --line: #d5ddd7;
+  --white: #ffffff;
+  --radius: 14px;
+  --font-head: "Bricolage Grotesque", "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-body: "Instrument Sans", "Segoe UI", Tahoma, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  font-size: 1.0625rem;
+}
+img, svg { max-width: 100%; }
+a { color: var(--teal); }
+:focus-visible { outline: 3px solid var(--marigold); outline-offset: 3px; }
+
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; margin: 0 0 .6em; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.3rem, 6vw, 4rem); font-weight: 800; }
+h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 700; }
+p { margin: 0 0 1em; max-width: 62ch; }
+
+.wrap { width: min(1100px, 92%); margin-inline: auto; }
+section { padding: 4.5rem 0; }
+
+/* Header */
+.site-header { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
+.nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.logo { font-family: var(--font-head); font-weight: 800; font-size: 1.4rem; color: var(--teal); text-decoration: none; display: flex; align-items: center; gap: .5rem; }
+.logo-mark { width: 30px; height: 30px; border-radius: 9px; background: var(--teal); display: grid; place-items: center; }
+.logo-mark::after { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--marigold); }
+.nav ul { list-style: none; display: flex; gap: 1.6rem; margin: 0; padding: 0; align-items: center; }
+.nav ul a { text-decoration: none; color: var(--ink); font-weight: 500; padding: .3rem 0; border-bottom: 2px solid transparent; }
+.nav ul a:hover, .nav ul a[aria-current="page"] { border-bottom-color: var(--marigold); }
+.menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: 8px; padding: .4rem .7rem; font: inherit; cursor: pointer; }
+
+/* Buttons */
+.btn { display: inline-block; padding: .8rem 1.4rem; border-radius: 999px; font-weight: 600; text-decoration: none; border: 2px solid var(--teal); cursor: pointer; font-family: inherit; font-size: 1rem; transition: background .15s, color .15s; }
+.btn-primary { background: var(--teal); color: var(--white); }
+.btn-primary:hover { background: var(--teal-dark); }
+.btn-ghost { background: transparent; color: var(--teal); }
+.btn-ghost:hover { background: var(--mint); }
+.btn-row { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.5rem; }
+
+/* Hero */
+.hero { padding: 4rem 0 5rem; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: center; }
+.hero p.lead { font-size: 1.2rem; color: var(--muted); }
+
+/* App preview (phone mock-up drawn in CSS) */
+.phone { background: var(--teal); border-radius: 36px; padding: 14px; width: min(340px, 100%); margin-inline: auto; box-shadow: 0 30px 50px -25px rgba(14, 77, 69, .55); }
+.screen { background: var(--paper); border-radius: 24px; padding: 1.3rem 1.1rem 1.4rem; }
+.screen .small { color: var(--muted); font-size: .85rem; margin: 0; }
+.screen .big { font-family: var(--font-head); font-size: 2rem; font-weight: 800; margin: 0 0 .8rem; }
+.split-bar { display: flex; height: 16px; border-radius: 8px; overflow: hidden; margin-bottom: 1rem; }
+.split-bar span:nth-child(1) { background: var(--teal); }
+.split-bar span:nth-child(2) { background: var(--marigold); }
+.split-bar span:nth-child(3) { background: var(--coral); }
+.split-bar span:nth-child(4) { background: var(--mint); }
+.legend { list-style: none; margin: 0 0 1rem; padding: 0; font-size: .92rem; }
+.legend li { display: flex; justify-content: space-between; padding: .35rem 0; border-bottom: 1px dashed var(--line); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: .5rem; }
+.goal { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: .8rem; font-size: .9rem; }
+.goal .track { height: 8px; background: var(--mint); border-radius: 4px; margin-top: .5rem; overflow: hidden; }
+.goal .track span { display: block; height: 100%; width: 64%; background: var(--teal); }
+
+/* Feature layout */
+.bg-mint { background: var(--mint); }
+.bg-teal { background: var(--teal); color: var(--white); }
+.bg-teal a { color: var(--marigold); }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.feature { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; }
+.feature .icon { width: 44px; height: 44px; border-radius: 12px; background: var(--mint); display: grid; place-items: center; font-size: 1.4rem; margin-bottom: 1rem; }
+.feature p { color: var(--muted); margin: 0; }
+
+.account-connect { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.eyebrow { color: var(--teal); font-size: .85rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.permission-list { padding-left: 1.25rem; }
+.permission-list li { margin: .5rem 0; }
+.account-panel { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; }
+.account-panel h3 { margin-bottom: .4rem; }
+.demo-balance { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding: 1rem; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.balance-label, .demo-balance strong, .balance-note { display: block; }
+.balance-label { color: var(--muted); font-size: .9rem; }
+.demo-balance strong { font-family: var(--font-head); font-size: 1.6rem; }
+.balance-note { color: var(--muted); font-size: .8rem; }
+.balance-toggle { flex: 0 0 auto; padding: .5rem .75rem; border: 1px solid var(--teal); border-radius: 8px; color: var(--teal); background: var(--white); font: inherit; font-size: .9rem; font-weight: 600; cursor: pointer; }
+.balance-toggle:hover { background: var(--mint); }
+.demo-notice { padding: .8rem; border-left: 4px solid var(--marigold); background: #fff8e7; font-size: .95rem; }
+.account-panel form { display: grid; gap: 1rem; }
+.account-panel label:not(.consent) { display: block; font-weight: 600; margin-bottom: .3rem; }
+.account-panel select { width: 100%; padding: .7rem .8rem; border: 1px solid #b9c4be; border-radius: 10px; font: inherit; background: var(--paper); }
+.consent { display: flex; align-items: flex-start; gap: .65rem; font-size: .95rem; }
+.consent input { flex: 0 0 auto; width: 1.1rem; height: 1.1rem; margin-top: .2rem; accent-color: var(--teal); }
+.account-message { min-height: 1.5em; margin: 0; color: var(--teal); font-weight: 600; }
+.connected-accounts { margin-top: 1.5rem; border-top: 1px solid var(--line); padding-top: 1.2rem; }
+.connected-accounts h3 { font-size: 1.1rem; }
+.empty-accounts { color: var(--muted); margin: 0; }
+.account-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+.account-item { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .8rem; border: 1px solid var(--line); border-radius: 10px; }
+.account-item strong, .account-item span { display: block; }
+.account-item span { color: var(--muted); font-size: .9rem; }
+.disconnect-btn { color: var(--teal); background: transparent; border: 1px solid var(--line); border-radius: 8px; padding: .45rem .65rem; font: inherit; cursor: pointer; }
+.disconnect-btn:hover { background: var(--mint); }
+
+.steps { counter-reset: step; list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 1rem; max-width: 700px; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 44px 1fr; gap: 1rem; align-items: start; }
+.steps li::before { content: counter(step); width: 44px; height: 44px; border-radius: 50%; background: var(--marigold); color: var(--ink); font-family: var(--font-head); font-weight: 800; display: grid; place-items: center; }
+
+.stats { display: flex; gap: 2.5rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.stats strong { display: block; font-family: var(--font-head); font-size: 2rem; }
+
+/* Two-column text blocks */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.page-title { padding: 3.5rem 0 1rem; }
+.page-title p { color: var(--muted); font-size: 1.15rem; }
+
+/* Calculators */
+.calc { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; }
+.calc-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.calc-heading h3 { margin: .2rem 0 0; }
+.calc-balance { flex: 0 0 auto; min-width: 142px; text-align: right; padding: .65rem .75rem; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); }
+.calc-balance .balance-label { font-size: .75rem; line-height: 1.3; }
+.calc-balance strong { display: block; font-family: var(--font-head); font-size: 1.15rem; }
+.calc-balance .balance-toggle { padding: .2rem .5rem; font-size: .78rem; }
+.demo-account-settings { margin: 1.25rem 0 1.75rem; padding: 1rem; border: 1px solid var(--line); border-radius: 12px; background: var(--white); }
+.demo-account-settings summary { color: var(--teal); font-weight: 600; cursor: pointer; }
+.demo-account-settings label { display: block; margin: .8rem 0 .3rem; font-weight: 600; }
+.demo-account-settings input { width: min(100%, 300px); padding: .65rem .75rem; border: 1px solid #b9c4be; border-radius: 10px; font: inherit; background: var(--paper); }
+.demo-account-settings p { margin: .5rem 0 0; color: var(--muted); font-size: .9rem; }
+.calc label { display: block; font-weight: 600; margin: 1rem 0 .3rem; }
+.calc input[type="number"], .form input, .form textarea, .form select {
+  width: 100%; padding: .7rem .8rem; border: 1px solid #b9c4be; border-radius: 10px; font: inherit; background: var(--paper);
+}
+.calc .btn { margin-top: 1.2rem; }
+.result { margin-top: 1.2rem; padding: 1rem; background: var(--mint); border-radius: 12px; min-height: 3.5rem; }
+.result strong { font-family: var(--font-head); font-size: 1.6rem; display: block; }
+.error { color: #a12b12; font-weight: 600; }
+
+/* Team / cards */
+.team { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin-top: 1.5rem; }
+.member { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.2rem; }
+.avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--teal); color: var(--white); display: grid; place-items: center; font-family: var(--font-head); font-weight: 800; margin-bottom: .8rem; }
+.member p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+/* Contact */
+.form { display: grid; gap: 1rem; }
+.form label { font-weight: 600; display: block; margin-bottom: .3rem; }
+.form-msg { display: none; padding: 1rem; border-radius: 10px; background: var(--mint); font-weight: 600; }
+.chat-note { border: 2px dashed var(--teal); border-radius: var(--radius); padding: 1.2rem; margin-top: 2rem; background: var(--white); }
+
+/* Footer */
+.site-footer { background: var(--teal-dark); color: #cfe1da; padding: 2.5rem 0; font-size: .95rem; }
+.site-footer .wrap { display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.site-footer a { color: var(--marigold); }
+.site-footer p { margin: 0 0 .4rem; }
+
+/* Responsive */
+@media (max-width: 800px) {
+  .hero-grid, .two-col, .account-connect { grid-template-columns: 1fr; }
+  .menu-btn { display: block; }
+  .nav ul { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--paper); flex-direction: column; padding: 1rem 4%; border-bottom: 1px solid var(--line); gap: 1rem; align-items: flex-start; }
+  .nav ul.open { display: flex; }
+  section { padding: 3rem 0; }
+}
+@media (max-width: 420px) {
+  .calc { padding: 1rem; }
+  .calc-heading { gap: .5rem; }
+  .calc-balance { min-width: 124px; padding: .5rem; }
+  .calc-heading h3 { font-size: 1.05rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }

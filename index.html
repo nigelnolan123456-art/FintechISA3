@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pocketwise – Know where your money goes</title>
+  <meta name="description" content="Pocketwise is a sample personal finance management app: budgets, savings goals and loan planning in one place.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="logo"><span class="logo-mark"></span>Pocketwise</a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul id="menu">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Features</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a class="btn btn-primary" href="services.html#calculators">Try the calculators</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Know where your money goes before the month ends.</h1>
+        <p class="lead">Pocketwise links your accounts, sorts your spending automatically and helps you reach savings goals, without a spreadsheet.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="services.html">See features</a>
+          <a class="btn btn-ghost" href="services.html#calculators">Plan a loan or savings goal</a>
+          <a class="btn btn-ghost" href="#connect-account">Connect an account</a>
+        </div>
+      </div>
+
+      <!-- App preview: a phone screen built with HTML/CSS (dummy data) -->
+      <div class="phone" aria-label="Preview of the Pocketwise app with sample data">
+        <div class="screen">
+          <p class="small">Spent in September</p>
+          <p class="big">₹24,850</p>
+          <div class="split-bar" role="img" aria-label="Spending split: rent 45%, food 25%, travel 15%, other 15%">
+            <span style="width:45%"></span><span style="width:25%"></span><span style="width:15%"></span><span style="width:15%"></span>
+          </div>
+          <ul class="legend">
+            <li><span><i style="background:var(--teal)"></i>Rent &amp; bills</span><b>₹11,200</b></li>
+            <li><span><i style="background:var(--marigold)"></i>Food</span><b>₹6,200</b></li>
+            <li><span><i style="background:var(--coral)"></i>Travel</span><b>₹3,700</b></li>
+            <li><span><i style="background:var(--mint)"></i>Everything else</span><b>₹3,750</b></li>
+          </ul>
+          <div class="goal">
+            <b>Goal: New laptop</b><br>₹32,000 of ₹50,000 saved
+            <div class="track"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="connect-account">
+    <div class="wrap account-connect">
+      <div>
+        <p class="eyebrow">Account connections</p>
+        <h2>See your money in one place</h2>
+        <p>Choose which account data to share. This prototype only simulates a read-only connection; it never contacts a bank or asks for login details.</p>
+        <ul class="permission-list">
+          <li>View balances and transaction history</li>
+          <li>No transfers, payments, or account changes</li>
+          <li>Remove a connected demo account at any time</li>
+        </ul>
+      </div>
+
+      <div class="account-panel">
+        <div class="demo-balance">
+          <div>
+            <span class="balance-label">Sample account balance</span>
+            <strong id="home-demo-balance" aria-live="polite">₹•••••</strong>
+            <span class="balance-note">Demo amount only — not live bank data</span>
+          </div>
+          <button class="balance-toggle" type="button" data-balance-toggle aria-controls="home-demo-balance" aria-pressed="false">Show balance</button>
+        </div>
+        <h3>Connect a demo account</h3>
+        <p class="demo-notice">Demo only — do not enter bank credentials. A real connection would use a secure, authorized banking provider.</p>
+        <form id="account-connect-form">
+          <div>
+            <label for="account-provider">Financial institution</label>
+            <select id="account-provider" name="provider">
+              <option value="Sample Bank">Sample Bank</option>
+              <option value="Demo Credit Union">Demo Credit Union</option>
+            </select>
+          </div>
+          <div>
+            <label for="account-type">Account type</label>
+            <select id="account-type" name="accountType">
+              <option value="Checking">Checking</option>
+              <option value="Savings">Savings</option>
+            </select>
+          </div>
+          <label class="consent">
+            <input id="account-consent" type="checkbox" required>
+            <span>I authorize Pocketwise to view this demo account’s balance and transaction history only.</span>
+          </label>
+          <button class="btn btn-primary" type="submit">Connect read-only account</button>
+          <p class="account-message" id="account-message" role="status" aria-live="polite"></p>
+        </form>
+        <div class="connected-accounts" id="connected-accounts" aria-live="polite">
+          <h3>Connected accounts</h3>
+          <p class="empty-accounts" id="empty-accounts">No accounts connected yet.</p>
+          <ul class="account-list" id="account-list"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-mint">
+    <div class="wrap">
+      <h2>What you can do with Pocketwise</h2>
+      <div class="features">
+        <div class="feature"><div class="icon" aria-hidden="true">📊</div><h3>Track spending</h3><p>Every payment is sorted into a category, so you see rent, food and travel at a glance.</p></div>
+        <div class="feature"><div class="icon" aria-hidden="true">🎯</div><h3>Save for goals</h3><p>Set a target and a date. Pocketwise tells you how much to put away each month.</p></div>
+        <div class="feature"><div class="icon" aria-hidden="true">🏦</div><h3>Plan loans</h3><p>Check the monthly EMI and total interest before you borrow.</p></div>
+        <div class="feature"><div class="icon" aria-hidden="true">🔔</div><h3>Get bill alerts</h3><p>Reminders arrive before rent, subscriptions and card bills are due.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Start in three steps</h2>
+      <ol class="steps">
+        <li><div><h3>Create your account</h3><p>Sign up with your email or phone number.</p></div></li>
+        <li><div><h3>Link your bank or UPI</h3><p>Choose the accounts you want to see. Read-only access, so Pocketwise can never move money.</p></div></li>
+        <li><div><h3>Set a budget</h3><p>Pick a monthly limit per category and get a nudge when you get close.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="bg-teal">
+    <div class="wrap">
+      <h2>Built for students and first-time earners</h2>
+      <p>Pocketwise is a sample FinTech project. All names, numbers and users on this site are dummy content.</p>
+      <div class="stats">
+        <div><strong>4 tools</strong>budget, goals, loans, alerts</div>
+        <div><strong>Read-only</strong>account access</div>
+        <div><strong>Free</strong>for students</div>
+      </div>
+      <div class="btn-row"><a class="btn btn-primary" style="background:var(--marigold);border-color:var(--marigold);color:var(--ink)" href="contact.html">Contact the team</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <p><b>Pocketwise</b></p>
+      <p>Sample FinTech website for ISA-III. Not a real financial service.</p>
+    </div>
+    <div>
+      <p><a href="about.html">About Us</a> · <a href="services.html">Features</a> · <a href="contact.html">Contact</a></p>
+      <p>Icons: emoji. Layout mock-up: Canva/Figma.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
